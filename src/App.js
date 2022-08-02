@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+
 import './App.css';
+import ReactIframeResizer from 'iframe-resizer-react';
+
+const options = {
+  heightCalculationMethod: "taggedElement",
+  log: true,
+  checkOrigin: false,
+  minHeight: 1000,
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ReactIframeResizer
+        src="https://bnpl-dev.homecredit.vn/bod-form"
+        width={"100%"}
+        {...options}
+         />
     </div>
   );
 }
